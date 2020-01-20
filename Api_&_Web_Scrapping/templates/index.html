@@ -1,0 +1,49 @@
+﻿{% extends "layout.html" %}
+{% block content %}
+
+<div>
+    <span>
+        Votre position est {{
+      forecast["latitude"]
+        }}
+        ,
+        {{
+      forecast["longitude"]
+        }}
+
+    </span>
+    <span>
+        Tu te situe ici :
+        {{
+      forecast["timezone"]
+        }}
+    </span>
+
+
+</div>
+<div>
+
+    <span>
+       Il fait  {{
+      forecast["currently"]["temperature"]
+        }} Fahrenheit
+
+    </span>
+
+    <span>
+        qui correspond à {{
+      (forecast["currently"]["temperature"] - 32)*5/9
+        }} Degrees Celsius
+    </span>
+</div>
+
+<div>
+    <span>
+        {{
+      forecast["hourly"]["summary"]
+        }}
+
+    </span>
+</div>
+</div>
+{% endblock %}
